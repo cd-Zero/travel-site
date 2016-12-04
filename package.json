@@ -4,5 +4,4 @@
   "dependencies": {
     "jquery": "file:node_modules/jquery",
     "normalize.css": "^5.0.0"
-  }
-}
+  },

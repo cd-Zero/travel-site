@@ -1,0 +1,14 @@
+body{
+  font-family: 'roboto', sans-serif;*/
+  color: #333
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+*{
+  /*web devs apply this globally recent practice*/
+  box-sizing: border-box;
+}

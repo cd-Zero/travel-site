@@ -1,0 +1,27 @@
+.wrapper{
+  background-color: green;
+  overflow: hidden;
+  padding-left:18px;
+  padding-right:18px ;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  &--medium{
+    max-width: 976px;
+  }
+  .wrapper{
+    padding-left: 0;
+    padding-right: 0;
+  }
+/*base line margin used for mobile is 1.87rem*/
+  &--b-margin{
+    margin-bottom:1rem;
+  }
+/*using mixin allows for margin to be at base of 3.87rem when screen is medium or larger*/
+@mixin atMedium{
+  &--b-margin{
+    margin-bottom:3.87rem;
+  }
+}
+
+}

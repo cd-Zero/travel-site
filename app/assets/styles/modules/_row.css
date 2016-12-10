@@ -1,0 +1,41 @@
+.row{
+background-color: yellow;
+  @mixin clearfix;
+
+
+/*only when screen is medium are rules applied, _mixins*/
+&__small-4--margin{
+  margin-bottom: 50px;
+}
+@mixin atMedium{
+  &__small-4--margin{
+    margin-bottom: 50px;
+  }
+  &--gutters{
+    padding-right: -35px;
+  }
+  &--gutters > div {
+    padding-right: 35px;
+    border: 5px solid blue;
+  }
+
+  &__medium-4{
+    float : left;
+    width : 33.33%;
+    background-color: pink;
+  }
+  &__medium-4--larger{
+    width:37%;
+  }
+  &__medium-8{
+    background: orange;
+    width : 66.66%;
+    float : left;
+
+  }
+  &__medium-8{
+    width: 63%;
+  }
+}
+
+}

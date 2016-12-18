@@ -1,0 +1,32 @@
+.section-title{
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
+
+  @mixin atSmall{
+    font-size: 3.73rem;
+
+  }
+
+
+  strong{
+    font-weight: 800;
+  }
+  /*base icon style*/
+  &__icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .6rem;
+/*icon at screen size >= small*/
+    @mixin atSmall{
+      margin-right: .5rem;
+      display: inline;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+}

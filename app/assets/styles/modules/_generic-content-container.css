@@ -2,9 +2,10 @@
   p{
     line-height: 1.65;
     font-size: .75rem;
-    font-weight: 100px;
+    font-weight: 100;
+    margin-top: 0 0 1.8rem 0;
   }
   p a{
-    font-weight: 700px;
+    font-weight: 700;
   }
 }

@@ -970,3 +970,25 @@ img{
   text-align: center;
   margin-top: .25rem 0 .25rem 0;
 }
+
+.site-footer{
+  background-color: blue;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+
+}
+
+.site-footer__text{
+  display: block;
+  margin-bottom: 1rem;
+}
+
+@media(min-width: 800px) {
+
+  .site-footer__text {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+}

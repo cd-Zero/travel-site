@@ -29,8 +29,16 @@ browserSync.init({
     gulp.start('cssInject');
 
   });
+
+  // watch js files
+  watch('./app/assets/scripts/**/*.js', function(){
+    gulp.start('scriptsRefresh');
+  })
 });
 
+gulp.task('scriptsRefresh',['scripts'], function(){
+  browserSync.reload();
+});
 
 gulp.task('cssInject',["styles"], function(){
   return gulp.src('./app/temp/styles/main.css')

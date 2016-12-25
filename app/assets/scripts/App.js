@@ -1,4 +1,3 @@
-var $ = require('jquery');
-var MobileMenu = require('/home/zero/Desktop/fccProjects/travel-site/app/assets/scripts/modules/MobileMenu.js');
+import MobileMenu from './modules/MobileMenu';
 
 var mobileMenu = new MobileMenu();

@@ -2,15 +2,13 @@
 
 /**
  * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
 html {
   font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -258,7 +256,6 @@ hr {
 
 button,
 input,
-optgroup,
 select,
 textarea {
   font: inherit; /* 1 */
@@ -805,6 +802,7 @@ a {
 
   .row--equal-height-at-medium {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -813,6 +811,7 @@ a {
 .row--equal-height-at-medium > div {
   float: none;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -821,6 +820,7 @@ a {
 
   .row--equal-height-at-large {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -829,6 +829,7 @@ a {
 .row--equal-height-at-large > div {
   float: none;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1088,10 +1089,19 @@ Instead edit gulp/templates/sprite */
   transition: background-color .3s ease-out;
 }
 
+.site-header--is-expanded {
+  background-color: rgba(47,85,114, .55);
+}
+
 @media (min-width: 800px) {
 
   .site-header {
+    position: fixed;
     background-color: rgba(47,85,114, .3);
+  }
+
+  .site-header--dark {
+    background-color: rgba(23, 51, 72, .85);
   }
 }
 
@@ -1108,6 +1118,10 @@ Instead edit gulp/templates/sprite */
   left: 50%;
   -webkit-transform: translateX(-50%) scale(.8);
           transform: translateX(-50%) scale(.8);
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
   -webkit-transform-origin: 50% 0;
           transform-origin: 50% 0;
   background-color: #2f5572;
@@ -1121,6 +1135,11 @@ Instead edit gulp/templates/sprite */
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
+
+  .site-header--dark .site-header__logo {
+    -webkit-transform: scale(.57);
+            transform: scale(.57);
+  }
 }
 
 .site-header__logo__graphic {
@@ -1128,22 +1147,22 @@ Instead edit gulp/templates/sprite */
 }
 
 .site-header__menu-icon {
-  z-index: 10;
   width: 20px;
   height: 19px;
   position: absolute;
+  z-index: 10;
   top: 10px;
   right: 10px;
 }
 
-.site-header__menu-icon::before{
-  content:"";
+.site-header__menu-icon::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 20px;
   height: 3px;
-  background-color: white;
+  background-color: #FFF;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
   -webkit-transition: -webkit-transform .3s ease-out;
@@ -1152,27 +1171,27 @@ Instead edit gulp/templates/sprite */
   transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
 
-.site-header__menu-icon__middle{
+.site-header__menu-icon__middle {
   position: absolute;
   top: 8px;
   left: 0;
   width: 20px;
   height: 3px;
-  background-color: white;
-  -webkit-transition: opacity .3s ease-out;
-  transition: opacity .3s ease-out;
+  background-color: #FFF;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
   -webkit-transform-origin: 0 50%;
           transform-origin: 0 50%;
 }
 
-.site-header__menu-icon::after{
+.site-header__menu-icon::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 20px;
   height: 3px;
-  background-color: white;
+  background-color: #FFF;
   -webkit-transform-origin: 0 100%;
           transform-origin: 0 100%;
   -webkit-transition: -webkit-transform .3s ease-out;
@@ -1189,64 +1208,59 @@ Instead edit gulp/templates/sprite */
 }
 
 .site-header__menu-icon--close-x::before {
-  -webkit-transform: rotate(45deg) scalex(1.25);
-          transform: rotate(45deg) scalex(1.25);
+  -webkit-transform: rotate(45deg) scaleX(1.25);
+          transform: rotate(45deg) scaleX(1.25);
 }
 
-.site-header__menu-icon--close-x .site-header__menu-icon__middle{
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
   opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }
 
-.site-header__menu-icon--close-x::after{
-  -webkit-transform: rotate(-45deg) scale(1.25) translatey(1px);
-          transform: rotate(-45deg) scale(1.25) translatey(1px);
+.site-header__menu-icon--close-x::after {
+  -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+          transform: rotate(-45deg) scaleX(1.25) translateY(1px);
 }
 
 .site-header__menu-content {
   opacity: 0;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  z-index: -10;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
   position: relative;
-  padding-top: 100px;
+  z-index: -10;
+  padding-top: 90px;
   text-align: center;
 }
 
 @media (min-width: 800px) {
 
   .site-header__menu-content {
-    display: inline-block;
-    padding-top: 0px;
-    float: right;
+    opacity: 1;
+    z-index: 1;
+    padding-top: 0;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
 }
 
-.site-header__menu-content--is-visible{
-  display: block;
-  position: relative;
+.site-header__menu-content--is-visible {
   opacity: 1;
   z-index: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-.site-header__menu-content--is-expanded{
-  background-color: rgba(47,85,114, .55);
-}
-
 .primary-nav {
-
-padding-top: 10px;
+  padding-top: 10px;
 }
 
 @media (min-width: 800px) {
 
   .primary-nav {
-    padding-top: 0px;
+    padding-top: 0;
   }
 }
 
@@ -1269,27 +1283,27 @@ padding-top: 10px;
 }
 
 .primary-nav li {
-  display: inline-block;
   list-style: none;
-  padding-right: 0px;
+  display: inline-block;
+  padding-right: 7px;
 }
 
 @media (min-width: 800px) {
 
   .primary-nav li {
+    padding-right: 20px;
     float: left;
     display: block;
-    padding-right: 20px;
   }
 }
 
-.primary-nav li li:last-child {
+.primary-nav li:last-child {
   padding-right: 0;
 }
 
 @media (min-width: 800px) {
 
-  .primary-nav li li:last-child {
+  .primary-nav li:last-child {
     padding-right: 20px;
   }
 }
@@ -1301,27 +1315,31 @@ padding-top: 10px;
   display: block;
   padding: 5px 8px;
   font-size: .8rem;
-  background-color: rgba(47,85,114, .3);
+  background-color: rgba(47,85,114, .5);
 }
 
 @media (min-width: 800px) {
 
   .primary-nav a {
-    background-color: transparent;
     font-size: 1rem;
     padding: 12px 0;
+    background-color: transparent;
+  }
+
+  .primary-nav a.is-current-link {
+    color: #fabb69;
   }
 }
 
-.reveal-item{
+.reveal-item {
   opacity: 0;
   -webkit-transition: all 1.5s ease-out;
   transition: all 1.5s ease-out;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
-.reveal-item--is-visible{
+.reveal-item--is-visible {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);

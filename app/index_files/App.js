@@ -11224,8 +11224,6 @@
 	  _createClass(Modal, [{
 	    key: "events",
 	    value: function events() {
-	      // backgroudn click method?
-
 	      // click open modal button
 	      this.openModalButton.click(this.openModal.bind(this));
 	      // click x button

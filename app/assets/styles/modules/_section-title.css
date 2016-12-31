@@ -6,19 +6,18 @@
   @mixin atSmall {
     font-size: 3.75rem;
   }
- &--less-margin{
-   text-align: center;
-   margin-bottom: 1.3rem;
-   font-weight: 300;
-   line-height: 1.65;
-   margin-top: 0;
- }
+
   strong {
     font-weight: 500;
   }
 
   &--blue {
     color: $mainBlue;
+  }
+
+  &--less-margin {
+    margin-bottom: 1.3rem;
+    margin-top: 0;
   }
 
   &__icon {

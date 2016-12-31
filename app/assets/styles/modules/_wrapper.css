@@ -9,7 +9,8 @@
   &--medium {
     max-width: 976px;
   }
-  &--narrow{
+
+  &--narrow {
     max-width: 470px;
   }
 

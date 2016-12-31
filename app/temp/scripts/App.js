@@ -11225,7 +11225,7 @@
 	    _classCallCheck(this, Modal);
 
 	    this.openModalButton = (0, _jquery2.default)(".open-modal");
-	    this.modal = (0, _jquery2.default)('.modal');
+	    this.modal = (0, _jquery2.default)(".modal");
 	    this.closeModalButton = (0, _jquery2.default)(".modal__close");
 	    this.events();
 	  }
@@ -11233,13 +11233,13 @@
 	  _createClass(Modal, [{
 	    key: "events",
 	    value: function events() {
-	      // backgroudn click method?
-
-	      // click open modal button
+	      // clicking the open modal button
 	      this.openModalButton.click(this.openModal.bind(this));
-	      // click x button
+
+	      // clicking the x close modal button
 	      this.closeModalButton.click(this.closeModal.bind(this));
-	      // pushes a key
+
+	      // pushes any key
 	      (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
 	    }
 	  }, {
@@ -11253,7 +11253,6 @@
 	    key: "openModal",
 	    value: function openModal() {
 	      this.modal.addClass("modal--is-visible");
-	      // return false eleminates href=# from point to top of page
 	      return false;
 	    }
 	  }, {

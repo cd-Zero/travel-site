@@ -1,21 +1,23 @@
+
+/*mixins at small screen size*/
 @define-mixin atSmall {
   @media (min-width: 530px) {
     @mixin-content;
   }
 }
-
+/*mixins at medium screen size*/
 @define-mixin atMedium {
   @media (min-width: 800px) {
     @mixin-content;
   }
 }
-
+/*mixins at large screen size*/
 @define-mixin atLarge {
   @media (min-width: 1010px) {
     @mixin-content;
   }
 }
-
+/*space between sections?*/
 @define-mixin clearfix {
   &::after {
     content: "";

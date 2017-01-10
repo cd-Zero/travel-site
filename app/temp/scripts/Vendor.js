@@ -46,21 +46,14 @@
 
 	'use strict';
 
-	__webpack_require__(8);
+	__webpack_require__(1);
 
-	__webpack_require__(9);
+	__webpack_require__(2);
 
-	__webpack_require__(10);
+	__webpack_require__(3);
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -862,7 +855,7 @@
 	})(window, document);
 
 /***/ },
-/* 9 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! picturefill - v3.0.2 - 2016-02-12
@@ -2412,7 +2405,7 @@
 
 
 /***/ },
-/* 10 */
+/* 3 */
 /***/ function(module, exports) {
 
 	(function(window, factory) {

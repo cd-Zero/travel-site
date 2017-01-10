@@ -1,0 +1,4 @@
+store image files under images folder
+
+store icons that which after running cmd -
+-$gulp icons will create sprites automatically

@@ -1,3 +1,10 @@
+// this builds the site for distrobution!
+//  in other words, this file creates the files you will load on to the web
+//  docs folder for github pages in your projects
+//   if you wantt o use distro please change refrences to docs on
+//  ---this page by ctrl find docs and replacing what you find with distro or whatever you like!
+//  gulp build will run the process
+
 var gulp = require('gulp'),
 imagemin = require('gulp-imagemin'),
 del = require('del'),

@@ -1,3 +1,7 @@
+// Modinizr tests browser so developer can get data to tailor user xp
+// so older browsers can be supported.
+// this code pipes css and script files through modernizr
+
 var gulp = require('gulp'),
 modernizr = require('gulp-modernizr');
 
